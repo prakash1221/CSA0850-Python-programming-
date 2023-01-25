@@ -13,3 +13,19 @@ for i in b:
         odd=odd+i**2
 b=[odd,even]
 print(b)
+
+
+output:
+enter the no of elements :5
+enter the element :1
+enter the element :2
+enter the element :3
+enter the element :4
+enter the element :5
+[1, 2, 3, 4, 5]
+[35, 20]
+
+explanation:
+even= 1^2+3^2+5^2 (1+9+25= 35)
+odd= 2^2+4^2 (4+16= 20)
+output of b =[ 35, 20 ]
