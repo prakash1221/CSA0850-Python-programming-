@@ -1,0 +1,19 @@
+def add_binary(a, b):
+    carry = 0
+    result = ""
+    length = max(len(a), len(b))
+    a = a.zfill(length)
+    b = b.zfill(length)
+    for i in range(length - 1, -1, -1):
+        a_digit = int(a[i])
+        b_digit = int(b[i])
+        temp_sum = a_digit + b_digit + carry
+        result = str(temp_sum % 2) + result
+        carry = temp_sum // 2
+    if carry:
+        result = str(carry) + result
+    
+    return result
+a = "11"
+b = "1"
+print(add_binary(a, b)) # Output: "100"
