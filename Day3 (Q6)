@@ -1,0 +1,21 @@
+def is_mirror_number(num):
+    num = str(num)
+    return num == num[::-1]
+
+def reverse_number(num):
+    num = str(num)
+    return int(num[::-1])
+
+num = 123456
+if is_mirror_number(num):
+    print("The number is already a Mirror number.")
+else:
+    mirror_num = reverse_number(num)
+    print("Mirror image:", mirror_num)
+
+num = 123456
+if is_mirror_number(num):
+    print("The number is already a Mirror number.")
+else:
+    mirror_num = reverse_number(num)
+    print("Mirror image:", mirror_num)
