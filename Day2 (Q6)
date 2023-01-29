@@ -1,0 +1,39 @@
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        if not digits:
+            return []
+        phone = {'2': ['a', 'b', 'c'],
+                 '3': ['d', 'e', 'f'],
+                 '4': ['g', 'h', 'i'],
+                 '5': ['j', 'k', 'l'],
+                 '6': ['m', 'n', 'o'],
+                 '7': ['p', 'q', 'r', 's'],
+                 '8': ['t', 'u', 'v'],
+                 '9': ['w', 'x', 'y', 'z']}
+        res = []
+        self.backtrack("", digits, res, phone)
+        return res
+    
+    def backtrack(self, combination: str, next_digits: str, res: List[str], phone: Dict[str, List[str]]):
+        if not next_digits:
+            res.append(combination)
+            return
+        for letter in phone[next_digits[0]]:
+            self.backtrack(combination + letter, next_digits[1:], res, phone)
+
+
+
+This solution uses a dictionary to map each digit to its corresponding letters.
+It uses recursion to find all possible letter combinations by repeatedly adding a letter from the mapping to the combination and passing the remaining digits as the next_digits.
+The base case is when there are no more digits left, in which case the current combination is added to the result list.
+The test case you provided should return the following output with the given function.
+1.Input: digits = "23"
+Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+2.Input: digits = ""
+Output: []
+3.Input: digits = "2"
+Output: ["a","b","c"]
+4.Input: digits = "9"
+Output: ["w","x","y",”z”]
+5.Input: digits = "87"
+Output: [“vs”,“vr”,”vq”, “vp”, “us”, “ur”, “uq”, “up”, “ts”, “tr”, “tq”, “tp” ]
