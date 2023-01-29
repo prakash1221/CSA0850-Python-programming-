@@ -1,0 +1,10 @@
+from collections import Counter
+from itertools import permutations
+
+def permuteUnique(nums):
+    nums_counter = Counter(nums)
+    nums_list = sorted([num for num in nums_counter for i in range(nums_counter[num])])
+    return list(set(permutations(nums_list)))
+
+nums = [1, 1, 2]
+print(permuteUnique(nums))
