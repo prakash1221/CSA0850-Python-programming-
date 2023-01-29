@@ -1,0 +1,17 @@
+def min_swaps_to_form_chessboard(board):
+    n = len(board)
+    row_swap = 0
+    col_swap = 0
+    for i in range(n):
+        if sum(board[i]) % 2 != 0:
+            row_swap += 1
+    for j in range(n):
+        col = [board[i][j] for i in range(n)]
+        if sum(col) % 2 != 0:
+            col_swap += 1
+    if row_swap > n/2 or col_swap > n/2:
+        return -1
+    return (row_swap + col_swap) // 2
+
+board = [[0,1,1,0],[0,1,1,0],[1,0,0,1],[1,0,0,1]]
+print(min_swaps_to_form_chessboard(board))
