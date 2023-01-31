@@ -1,0 +1,4 @@
+str=input("enter the string")
+c=input("enter the character")
+s=str.replace('l','')
+print(s)
