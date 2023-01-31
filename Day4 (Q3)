@@ -1,0 +1,9 @@
+def smallernumbersThancurrent(nums):
+    sorted_nums=sorted(nums)
+    count={}
+    for i, n in enumerate(sorted_nums):
+        if n not in count:
+            count[n]=i
+    return[count[n] for n in nums]
+nums=list(map(int,input("enter the number: ").split()))
+print(smallernumbersThancurrent(nums))
