@@ -1,6 +1,15 @@
-a=int(input("enter total users"))
-b=int(input("enter the number of staff users"))
-c=a-b
-d=b//3
-m=c-d
-print("student users:",m)
+print("enter the grade  of the employee A or B")
+x=input("enter the grade of the employee: ")
+y=int(input("enter the employee salary:"))
+print("salary: ",y)
+c=(y*0.05)
+d=(y*0.1)
+if(x == "A"):
+    print("bonus: ",c)
+    print("total salary: ",(y+c))
+elif(x == "B"):
+    print("bonus: ",d)
+    print("total salary: ",(y+d))
+elif (y<10000):
+    print("total salary: ",y+(y*0.02))
+
